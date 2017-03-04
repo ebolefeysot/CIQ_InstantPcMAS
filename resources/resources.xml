@@ -1,11 +1,10 @@
 <resources>
-	<string id="AppName">Vitesse en % VMA</string>
-	<string id="vVo2maxTitle">VMA</string>
-	<string id="vVo2maxPrompt">Entrez votre VMA:</string>
-	<string id="vVo2maxError">VMA incorrecte</string>
-	<!-- <bitmap id="LauncherIcon" filename="drawables/launcher_icon.png" />-->
+	<string id="AppName">Speed in % vVO2max</string>
+	<string id="vVo2maxTitle">vVo2max (km/h)</string>
+	<string id="vVo2maxPrompt">Enter your vVo2max in km/h (= miles/h * 1.61)</string>
+	<string id="vVo2maxError">Incorrect vVo2max</string>
 	<properties>
 		<property id="appVersion" type="string">1.0.0</property>
-		<property id="vVo2max" type="float">17.4</property>
+		<property id="vVo2max" type="float">15.0</property>
 	</properties>
 </resources>
