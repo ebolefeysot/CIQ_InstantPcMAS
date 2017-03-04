@@ -1,0 +1,14 @@
+<resources>
+	<string id="AppName">Vitesse en % VMA</string>
+	<string id="vVo2maxTitle">VMA</string>
+	<string id="vVo2maxPrompt">Entrez votre VMA:</string>
+	<string id="vVo2maxError">VMA incorrecte</string>
+	<!-- <bitmap id="LauncherIcon" filename="drawables/launcher_icon.png" />-->
+	<settings>
+		<setting propertyKey="@Properties.vVo2max" title="@Strings.vVo2maxTitle"
+			prompt="@Strings.vVo2maxPrompt">
+			<settingConfig type="numeric" required="true"
+				errorMessage="@Strings.vVo2maxError" />
+		</setting>
+	</settings>
+</resources>
