@@ -2,12 +2,6 @@ using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
 
 class PercentVmaView extends Ui.SimpleDataField {
-    enum {
-        STOPPED,
-        PAUSED,
-        RUNNING
-    }
-
     var vma = Application.getApp().getProperty("vVo2max");
 
     hidden var mVma = 0;
@@ -39,7 +33,7 @@ class PercentVmaView extends Ui.SimpleDataField {
 		        	mVma = speedkmh / vma * 100;
 		        }
 			    //Sys.println("Time: " + info.elapsedTime + "  speed: " + info.currentSpeed + "  dist: " + info.elapsedDistance + "  %vma: " + mVma);
-		        return mVma.format("%d");
+		        return mVma.format("%d") + "%";
 		 }
 		catch( ex ) {
 		    return "Err";
