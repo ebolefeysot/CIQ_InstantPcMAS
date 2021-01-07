@@ -5,6 +5,6 @@
 	<string id="vVo2maxError">Incorrect vVo2max</string>
 	<properties>
 		<property id="appVersion" type="string">1.0.0</property>
-		<property id="vVo2max" type="float">15.0</property>
+		<property id="vVo2max" type="float">17.4</property>
 	</properties>
 </resources>
