@@ -5,6 +5,8 @@ class PercentVmaView extends Ui.SimpleDataField {
     var vma = Application.getApp().getProperty("vVo2max");
 
     hidden var mVma = 0;
+	hidden var fieldLabel = Ui.loadResource(Rez.Strings.FieldName);
+	
 
     //! constructor
     function initialize() {
@@ -13,7 +15,7 @@ class PercentVmaView extends Ui.SimpleDataField {
     }
 
     function setLabel(){
-        label = "%VMA " + vma.format("%.01f");        
+        label = fieldLabel + " " + vma.format("%.01f");        
     }
 
     //! settings have changed.
