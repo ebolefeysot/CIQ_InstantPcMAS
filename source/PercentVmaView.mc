@@ -4,7 +4,7 @@ using Toybox.System as Sys;
 class PercentVmaView extends Ui.SimpleDataField {
     var vma = Application.getApp().getProperty("vVo2max");
 
-    hidden var mVma = 0;
+    hidden var mVma = 0.0;
 	hidden var fieldLabel = Ui.loadResource(Rez.Strings.FieldName);
 	
 
@@ -28,14 +28,14 @@ class PercentVmaView extends Ui.SimpleDataField {
     function compute(info) {
 		try {
 		        if (info == null || info.currentSpeed == null){
-		        	mVma = 0;
+		        	mVma = 0.0;
 		        }
 		        else {
-		        	var speedkmh = info.currentSpeed*3.6;
-		        	mVma = speedkmh / vma * 100;
+		        	var speedkmh = info.currentSpeed * 3.6;
+		        	mVma = speedkmh / vma * 100.0;
 		        }
 			    //Sys.println("Time: " + info.elapsedTime + "  speed: " + info.currentSpeed + "  dist: " + info.elapsedDistance + "  %vma: " + mVma);
-		        return mVma.format("%d") + "%";
+		        return mVma.format("%.0f") + "%";
 		 }
 		catch( ex ) {
 		    return "Err";
