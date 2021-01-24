@@ -3,6 +3,8 @@ using Toybox.System as Sys;
 
 class PercentVmaView extends Ui.SimpleDataField {
     var vma = Application.getApp().getProperty("vVo2max");
+    var nbDecimal = Application.getApp().getProperty("nbDecimal");
+    var showPercentChar = Application.getApp().getProperty("showPercentChar");
 
     hidden var mVma = 0.0;
 	hidden var fieldLabel = Ui.loadResource(Rez.Strings.FieldName);
@@ -35,7 +37,14 @@ class PercentVmaView extends Ui.SimpleDataField {
 		        	mVma = speedkmh / vma * 100.0;
 		        }
 			    //Sys.println("Time: " + info.elapsedTime + "  speed: " + info.currentSpeed + "  dist: " + info.elapsedDistance + "  %vma: " + mVma);
-		        return mVma.format("%.0f") + "%";
+			    
+			    var format = "%." + nbDecimal + "f";
+				//Sys.println("format: " + format);
+				var result = mVma.format(format);
+			    if (showPercentChar){
+			    	result += "%";
+			    }
+		        return result;
 		 }
 		catch( ex ) {
 		    return "Err";
