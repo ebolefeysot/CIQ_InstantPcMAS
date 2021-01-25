@@ -8,7 +8,7 @@
 	
 	<string id="showDecimalTitle">Display %MAS with a decimal (ex: 68.9%)</string>
 
-	<string id="showPercentCharTitle">Display '%' char after speed</string>
+	<string id="showPercentCharTitle">Display '%' char after speed (note that Garmin will use a smaller font)</string>
 	
 	<properties>
 		<property id="mas" type="float">17.4</property>

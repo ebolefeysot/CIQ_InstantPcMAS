@@ -8,5 +8,5 @@
 	
 	<string id="showDecimalTitle">Afficher le %VMA avec une décimale (ex: 68.9%)</string>
 
-	<string id="showPercentCharTitle">Afficher le symbole '%' après la vitesse</string>
+	<string id="showPercentCharTitle">Afficher le symbole '%' après la vitesse (Note: Garmin utilisera une police plus petite)</string>
 </resources>
