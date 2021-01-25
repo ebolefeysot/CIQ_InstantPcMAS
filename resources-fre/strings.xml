@@ -1,4 +1,4 @@
 <strings>
-<string id="AppName">InstantPcMAS</string>
-<string id="FieldName">vitesse %VMA</string>
+	<!-- Nom affiché au dessus du champ sur la montre -->
+	<string id="FieldName">VIT %VMA</string>
 </strings>

@@ -1,28 +1,26 @@
 <resources>
-	<string id="vVo2maxTitle">vVo2max (km/h)</string>
-	<string id="vVo2maxPrompt">Enter your vVo2max in km/h (= miles/h * 1.61)</string>
-	<string id="vVo2maxError">Incorrect vVo2max</string>
+    <!-- AppName is used as field name in watch. It should be short. -->
+    <string id="AppName">Speed in %MAS</string>
+
+	<string id="masTitle">MAS (km/h)</string>
+	<string id="masPrompt">Enter your MAS in km/h (= miles/h * 1.61)</string>
+	<string id="masError">Incorrect MAS</string>
 	
-	<string id="nbDecimalTitle">Number of decimal to display</string>
-	<string id="nbDecimalPrompt">Enter the number of decimal to display (0..2)</string>
+	<string id="showDecimalTitle">Display %MAS with a decimal (ex: 68.9%)</string>
 
 	<string id="showPercentCharTitle">Display '%' char after speed</string>
 	
 	<properties>
-		<property id="appVersion" type="string">1.0.0</property>
-		<property id="vVo2max" type="float">17.4</property>
+		<property id="mas" type="float">17.4</property>
 		<property id="showPercentChar" type="boolean">true</property>
-		<property id="nbDecimal" type="number">0</property>		
+		<property id="showDecimal" type="boolean">false</property>	
 	</properties>
 	<settings>
-		<setting propertyKey="@Properties.vVo2max" title="@Strings.vVo2maxTitle"
-			prompt="@Strings.vVo2maxPrompt">
-			<settingConfig type="numeric" required="true"
-				errorMessage="@Strings.vVo2maxError" />
+		<setting propertyKey="@Properties.mas" title="@Strings.masTitle" prompt="@Strings.masPrompt">
+			<settingConfig type="numeric" required="true" errorMessage="@Strings.masError" />
 		</setting>
-		<setting propertyKey="@Properties.nbDecimal" title="@Strings.nbDecimalTitle"
-			prompt="@Strings.nbDecimalPrompt">
-			<settingConfig type="numeric" required="true" min="0" max="2"/>
+		<setting propertyKey="@Properties.showDecimal" title="@Strings.showDecimalTitle">
+			<settingConfig type="boolean" required="true"/>
 		</setting>
 		<setting propertyKey="@Properties.showPercentChar" title="@Strings.showPercentCharTitle">
 			<settingConfig type="boolean" required="true"/>

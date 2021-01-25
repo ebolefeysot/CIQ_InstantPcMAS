@@ -2,8 +2,9 @@ using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
 
 class PercentVmaView extends Ui.SimpleDataField {
-    var vma = Application.getApp().getProperty("vVo2max");
-    var nbDecimal = Application.getApp().getProperty("nbDecimal");
+
+    var vma = Application.getApp().getProperty("mas");
+    var showDecimal = Application.getApp().getProperty("showDecimal");
     var showPercentChar = Application.getApp().getProperty("showPercentChar");
 
     hidden var mVma = 0.0;
@@ -38,7 +39,11 @@ class PercentVmaView extends Ui.SimpleDataField {
 		        }
 			    //Sys.println("Time: " + info.elapsedTime + "  speed: " + info.currentSpeed + "  dist: " + info.elapsedDistance + "  %vma: " + mVma);
 			    
-			    var format = "%." + nbDecimal + "f";
+			    var format = "%.0f";
+			    if (showDecimal){
+			    	format = "%.1f";
+			    }
+			    
 				//Sys.println("format: " + format);
 				var result = mVma.format(format);
 			    if (showPercentChar){
