@@ -2,15 +2,14 @@ using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
 
 class PercentVmaView extends Ui.SimpleDataField {
-    enum {
-        STOPPED,
-        PAUSED,
-        RUNNING
-    }
 
-    var vma = Application.getApp().getProperty("vVo2max");
+    var vma = Application.getApp().getProperty("mas");
+    var showDecimal = Application.getApp().getProperty("showDecimal");
+    var showPercentChar = Application.getApp().getProperty("showPercentChar");
 
-    hidden var mVma = 0;
+    hidden var mVma = 0.0;
+	hidden var fieldLabel = Ui.loadResource(Rez.Strings.FieldName);
+	
 
     //! constructor
     function initialize() {
@@ -19,7 +18,7 @@ class PercentVmaView extends Ui.SimpleDataField {
     }
 
     function setLabel(){
-        label = "%VMA " + vma.format("%.01f");        
+        label = fieldLabel + " " + vma.format("%.01f");        
     }
 
     //! settings have changed.
@@ -32,14 +31,25 @@ class PercentVmaView extends Ui.SimpleDataField {
     function compute(info) {
 		try {
 		        if (info == null || info.currentSpeed == null){
-		        	mVma = 0;
+		        	mVma = 0.0;
 		        }
 		        else {
-		        	var speedkmh = info.currentSpeed*3.6;
-		        	mVma = speedkmh / vma * 100;
+		        	var speedkmh = info.currentSpeed * 3.6;
+		        	mVma = speedkmh / vma * 100.0;
 		        }
 			    //Sys.println("Time: " + info.elapsedTime + "  speed: " + info.currentSpeed + "  dist: " + info.elapsedDistance + "  %vma: " + mVma);
-		        return mVma.format("%d");
+			    
+			    var format = "%.0f";
+			    if (showDecimal){
+			    	format = "%.1f";
+			    }
+			    
+				//Sys.println("format: " + format);
+				var result = mVma.format(format);
+			    if (showPercentChar){
+			    	result += "%";
+			    }
+		        return result;
 		 }
 		catch( ex ) {
 		    return "Err";

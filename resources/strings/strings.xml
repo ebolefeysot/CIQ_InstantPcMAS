@@ -1,2 +1,4 @@
 <strings>
+	<!-- This string is displayed on watch above the field -->
+	<string id="FieldName">%MAS SPEED</string>
 </strings>

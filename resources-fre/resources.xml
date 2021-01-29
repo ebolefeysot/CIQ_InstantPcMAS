@@ -1,13 +1,12 @@
 <resources>
-	<string id="AppName">Vitesse en % VMA</string>
-	<string id="vVo2maxTitle">VMA (km/h)</string>
-	<string id="vVo2maxPrompt">Entrez votre VMA en km/h</string>
-	<string id="vVo2maxError">VMA incorrecte</string>
-	<settings>
-		<setting propertyKey="@Properties.vVo2max" title="@Strings.vVo2maxTitle"
-			prompt="@Strings.vVo2maxPrompt">
-			<settingConfig type="numeric" required="true"
-				errorMessage="@Strings.vVo2maxError" />
-		</setting>
-	</settings>
+    <!-- AppName est utilisé comme nom pour le champ sur la montre. Il doit être court -->
+    <string id="AppName">Vitesse en %VMA</string>
+
+	<string id="masTitle">VMA (km/h)</string>
+	<string id="masPrompt">Entrez votre VMA en km/h</string>
+	<string id="masError">VMA incorrecte</string>
+	
+	<string id="showDecimalTitle">Afficher le %VMA avec une décimale (ex: 68.9%)</string>
+
+	<string id="showPercentCharTitle">Afficher le symbole '%' après la vitesse (Note: Garmin utilisera une police plus petite)</string>
 </resources>
