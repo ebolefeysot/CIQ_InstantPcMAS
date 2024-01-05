@@ -3,9 +3,9 @@ using Toybox.System as Sys;
 
 class PercentVmaView extends Ui.SimpleDataField {
 
-    var vma = Application.getApp().getProperty("mas");
-    var showDecimal = Application.getApp().getProperty("showDecimal");
-    var showPercentChar = Application.getApp().getProperty("showPercentChar");
+    var vma = Application.Properties.getValue("mas");
+    var showDecimal = Application.Properties.getValue("showDecimal");
+    var showPercentChar = Application.Properties.getValue("showPercentChar");
 
     hidden var mVma = 0.0;
 	hidden var fieldLabel = Ui.loadResource(Rez.Strings.FieldName);
@@ -23,7 +23,7 @@ class PercentVmaView extends Ui.SimpleDataField {
 
     //! settings have changed.
     function onSettingsChanged(){
-        vma = Application.getApp().getProperty("vVo2max");
+        vma = Application.Properties.getValue("mas");
         setLabel();
     }
 
